@@ -98,6 +98,30 @@ To rebuild without flashing, use `make build`. To clean, use `make clean`.
 > If `make program` fails to find the kit, confirm the KitProg3 firmware is up to date via
 > the **Firmware Loader** tool installed with ModusToolbox&trade;.
 
+### 2.3 (Optional) Smoke-test the kit from a terminal
+
+Once the kit is programmed, you can verify it is running correctly without launching the
+mock display by attaching any serial terminal application (Tera Term, PuTTY,
+**ModusToolbox&trade; Serial Monitor**, the VS Code *Serial Monitor* extension, etc.) to the
+**KitProg3 USB-UART** COM port.
+
+Use these settings:
+
+| Setting | Value |
+|---------|-------|
+| Baud rate | 115200 |
+| Data bits | 8 |
+| Parity | None |
+| Stop bits | 1 |
+| Flow control | None |
+
+With the terminal connected, press the kit's **reset** button. You should see
+`---RESET COMPLETE---` followed by the kit's startup banner. Speak the wake word
+**"Coffee Maker"** and a command — the kit will print the corresponding event lines (the
+same UART protocol the dashboard consumes) directly to the terminal. Close the terminal
+before launching the dashboard, since only one application can hold the COM port open at a
+time.
+
 ---
 
 ## 3. Set up the mock display (PC dashboard)
@@ -107,7 +131,30 @@ by the kit, and animates the coffee-maker UI accordingly.
 
 Run all of the following from **PowerShell** at the repository root.
 
-### 3.1 Allow venv activation in this session
+### 3.1 Install Python
+
+The dashboard requires **Python 3.10 or newer** for Windows. If `py --version` already
+reports a 3.10+ interpreter you can skip this step.
+
+1. Download the latest Python 3.x **Windows installer (64-bit)** from
+   <https://www.python.org/downloads/windows/>.
+2. Run the installer and, on the first page, tick **Add python.exe to PATH** *and*
+   **py launcher** before clicking *Install Now*. The `py` launcher is what the commands
+   below invoke.
+3. Open a **new** PowerShell window (so it picks up the updated `PATH`) and verify:
+
+   ```powershell
+   py --version
+   py -m pip --version
+   ```
+
+   Both commands should print a version string. If `py` is not recognised, re-run the
+   installer and choose *Modify* → enable *py launcher*, or reboot after installation.
+
+> Python from the **Microsoft Store** also works, but the official python.org installer is
+> recommended because it reliably installs the `py` launcher used throughout this guide.
+
+### 3.2 Allow venv activation in this session
 
 PowerShell blocks unsigned scripts by default. Allow them for the current session only:
 
@@ -115,7 +162,7 @@ PowerShell blocks unsigned scripts by default. Allow them for the current sessio
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
 ```
 
-### 3.2 Create and activate the virtual environment
+### 3.3 Create and activate the virtual environment
 
 ```powershell
 cd .\mock_display
@@ -125,7 +172,7 @@ py -m venv .venv
 
 Your prompt should now be prefixed with `(.venv)`.
 
-### 3.3 Install dependencies
+### 3.4 Install dependencies
 
 ```powershell
 py -m pip install --upgrade pip
@@ -134,12 +181,12 @@ py -m pip install -r requirements.txt
 
 This installs `customtkinter`, `pyserial`, `bleak`, and `Pillow`.
 
-### 3.4 Identify the KitProg3 COM port
+### 3.5 Identify the KitProg3 COM port
 
 In **Device Manager** under *Ports (COM & LPT)*, locate the **KitProg3 USB-UART** entry and
 note its `COMx` number.
 
-### 3.5 Launch the dashboard
+### 3.6 Launch the dashboard
 
 ```powershell
 py .\voice-dashboard.py COM5
@@ -155,7 +202,7 @@ Replace `COM5` with the port from the previous step. Omit the argument to use th
 1. With the dashboard running and connected to the KitProg3 COM port, press the **reset**
    button on the AI kit.
 2. The dashboard receives `---RESET COMPLETE---` from the kit and returns to the IDLE screen.
-3. Speak the wake word **"OK Infineon"**. The kit's blue LED begins breathing, and the
+3. Speak the wake word **"Coffee Maker"**. The kit's blue LED begins breathing, and the
    dashboard shows it is awake.
 4. Speak a command — for example *"Show me hot drinks"*, *"Make me a cappuccino"*,
    *"Toggle extra shot"*, *"Set strength to high"*, *"Yes"* / *"No"* to confirm, or *"Stop"*.

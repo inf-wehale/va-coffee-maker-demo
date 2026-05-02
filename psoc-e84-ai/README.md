@@ -87,7 +87,7 @@ See [Using the code example](docs/using_the_code_example.md) for instructions on
 
    ![](images/terminal-voice-assistant-demo.png)
 
-4. Speak the wake word "OK Infineon" and one of the commands from this [list](./proj_cm55/source/voice_assistant/va_models/Smart_Lights_Demo/command_list_Smart_Lights_Demo.txt). To change the wake word and commands, see the [Design and implementation](docs/design_and_implementation.md) section. Note that after speaking the wake word, the kit's blue LED keeps breathing till a timeout occurs or a command is spoken
+4. Speak the wake word "Coffee Maker" and one of the commands from this [list](./proj_cm55/source/voice_assistant/va_models/Coffee/command_list_Coffee.txt). To change the wake word and commands, see the [Design and implementation](docs/design_and_implementation.md) section. Note that after speaking the wake word, the kit's blue LED keeps breathing till a timeout occurs or a command is spoken
 
 5. Confirm that the command is printed correctly in the terminal
 
