@@ -29,11 +29,32 @@ volume, and more.
 
 ## High-level flow
 
+0. Clone this repository to your PC.
 1. Install ModusToolbox&trade; 3.8 and the LLVM Embedded Toolchain.
 2. Bootstrap the embedded project with `make getlibs` from modus-shell.
 3. Build and flash the kit with `make program`.
 4. Set up a Python virtual environment and launch the mock display.
 5. Reset the kit — it will print to the dashboard's serial port. Speak the wake word and try commands.
+
+---
+
+## 0. Clone the repository
+
+Clone this repo to a path on your PC — keep the path short and free of spaces, since
+ModusToolbox&trade; and `make` can struggle with long or spaced paths on Windows:
+
+```powershell
+cd C:\
+git clone https://github.com/Infineon/va-coffee-maker-demo.git
+cd va-coffee-maker-demo
+```
+
+If you don't already have Git for Windows installed, download it from
+<https://git-scm.com/download/win>. Alternatively, download the repository as a ZIP from
+GitHub and extract it to a short path such as `C:\va-coffee-maker-demo`.
+
+All subsequent commands in this guide assume your working directory is the root of the
+cloned repository.
 
 ---
 
