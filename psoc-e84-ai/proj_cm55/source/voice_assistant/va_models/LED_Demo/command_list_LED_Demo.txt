@@ -1,0 +1,16 @@
+turn on the light
+switch on the light
+enable the light
+make the light brighter
+increase the brightness
+make the light dimmer
+decrease the brightness
+set the brightness to <numbers10> {}
+adjust the brightness to <numbers10> {}
+dim light to <numbers10> {}
+flip the light
+toggle the light
+change the light state
+turn off the light
+switch off the light
+disable the light

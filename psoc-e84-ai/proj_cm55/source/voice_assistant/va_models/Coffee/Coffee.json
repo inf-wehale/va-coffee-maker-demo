@@ -1,0 +1,337 @@
+{
+    "projectName": "coffee",
+    "settings": {
+        "arm_core_id": "U55",
+        "ww_false_fraction": 0.0003,
+        "cmd_reject_fraction": 1,
+        "sod_ww_noactivity_timeout_ms": 500,
+        "ww_cmd_maxwwgap_ms": 1500,
+        "cmd_timeout_adjust_level": 0,
+        "dict": "English-US"
+    },
+    "wakewords": [
+        {
+            "interjections": null,
+            "word": "Coffee Maker",
+            "phoneme": []
+        }
+    ],
+    "intents": [
+        {
+            "name": "ShowDrinks",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Show",
+                            "Which drinks are",
+                            "Which drinks can I brew",
+                            "Show drinks that can be",
+                            "Which drinks allow for"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "Category"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "StartDrink",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Brew",
+                            "Start",
+                            "Make",
+                            "Make me a"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "Drink"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "CustomDrink",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Custom brew",
+                            "Personal drink",
+                            "My drink"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "CustomNum"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ToggleDoubleCup",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Double cup mode",
+                            "Double cup"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ToggleColdBrew",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Cold brew mode",
+                            "Cold brew"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ToggleExtraShot",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Extra shot mode",
+                            "Extra shot"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "TempSetting",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Temp",
+                            "Temp setting",
+                            "Temp level"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "Temp"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "StrengthSetting",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Strength",
+                            "Strength setting",
+                            "Strength level"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "Strength"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "VolumeSetting",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Volume",
+                            "Volume setting",
+                            "Volume level"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "Volume"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Stop",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Stop",
+                            "Cancel",
+                            "End"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Acknowledge",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "AckVal"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "favorite",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Make my favorite drink",
+                            "Start special drink"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "variables": [
+        {
+            "name": "Category",
+            "type": "text",
+            "phrases": [
+                "Hot",
+                "Cold",
+                "Iced",
+                "Extra Shot"
+            ],
+            "ranges": null,
+            "units": null
+        },
+        {
+            "name": "Drink",
+            "type": "text",
+            "phrases": [
+                "Coffee",
+                "Americano",
+                "Cappuccino",
+                "Espresso",
+                "Cortado",
+                "Latte Machiato",
+                "Cafe Latte",
+                "Cafe Barista",
+                "Hot Water"
+            ],
+            "ranges": null,
+            "units": null
+        },
+        {
+            "name": "CustomNum",
+            "type": "integer",
+            "phrases": null,
+            "ranges": [
+                "10"
+            ],
+            "units": [
+                [
+                    ""
+                ]
+            ]
+        },
+        {
+            "name": "Temp",
+            "type": "text",
+            "phrases": [
+                "Low",
+                "Medium",
+                "High"
+            ],
+            "ranges": null,
+            "units": null
+        },
+        {
+            "name": "Strength",
+            "type": "text",
+            "phrases": [
+                "Low",
+                "Medium",
+                "High"
+            ],
+            "ranges": null,
+            "units": null
+        },
+        {
+            "name": "Volume",
+            "type": "text",
+            "phrases": [
+                "Low",
+                "Medium",
+                "High"
+            ],
+            "ranges": null,
+            "units": null
+        },
+        {
+            "name": "AckVal",
+            "type": "text",
+            "phrases": [
+                "Yes",
+                "No"
+            ],
+            "ranges": null,
+            "units": null
+        }
+    ]
+}

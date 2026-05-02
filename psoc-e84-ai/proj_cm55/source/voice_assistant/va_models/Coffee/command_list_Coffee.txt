@@ -1,0 +1,99 @@
+Show Hot
+Show Cold
+Show Iced
+Show Extra Shot
+Which drinks are Hot
+Which drinks are Cold
+Which drinks are Iced
+Which drinks are Extra Shot
+Which drinks can I brew Hot
+Which drinks can I brew Cold
+Which drinks can I brew Iced
+Which drinks can I brew Extra Shot
+Show drinks that can be Hot
+Show drinks that can be Cold
+Show drinks that can be Iced
+Show drinks that can be Extra Shot
+Which drinks allow for Hot
+Which drinks allow for Cold
+Which drinks allow for Iced
+Which drinks allow for Extra Shot
+Brew Coffee
+Brew Americano
+Brew Cappuccino
+Brew Espresso
+Brew Cortado
+Brew Latte Machiato
+Brew Cafe Latte
+Brew Cafe Barista
+Brew Hot Water
+Start Coffee
+Start Americano
+Start Cappuccino
+Start Espresso
+Start Cortado
+Start Latte Machiato
+Start Cafe Latte
+Start Cafe Barista
+Start Hot Water
+Make Coffee
+Make Americano
+Make Cappuccino
+Make Espresso
+Make Cortado
+Make Latte Machiato
+Make Cafe Latte
+Make Cafe Barista
+Make Hot Water
+Make me a Coffee
+Make me a Americano
+Make me a Cappuccino
+Make me a Espresso
+Make me a Cortado
+Make me a Latte Machiato
+Make me a Cafe Latte
+Make me a Cafe Barista
+Make me a Hot Water
+Custom brew <numbers10> {}
+Personal drink <numbers10> {}
+My drink <numbers10> {}
+Double cup mode
+Double cup <end-silence>
+Cold brew mode
+Cold brew <end-silence>
+Extra shot mode
+Extra shot <end-silence>
+Temp Low
+Temp Medium
+Temp High
+Temp setting Low
+Temp setting Medium
+Temp setting High
+Temp level Low
+Temp level Medium
+Temp level High
+Strength Low
+Strength Medium
+Strength High
+Strength setting Low
+Strength setting Medium
+Strength setting High
+Strength level Low
+Strength level Medium
+Strength level High
+Volume Low
+Volume Medium
+Volume High
+Volume setting Low
+Volume setting Medium
+Volume setting High
+Volume level Low
+Volume level Medium
+Volume level High
+Stop
+Cancel
+End
+Yes
+No
+Make my favorite drink
+Start special drink

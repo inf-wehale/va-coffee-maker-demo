@@ -1,0 +1,13 @@
+power on
+power off <end-silence>
+Set hob <numbers10> {}
+Set temp <numbers150to550by5> {degree,degrees}
+Set temp to <numbers150to550by5> {degree,degrees}
+Set temp at <numbers150to550by5> {degree,degrees}
+Set temperature <numbers150to550by5> {degree,degrees}
+Set temperature to <numbers150to550by5> {degree,degrees}
+Set temperature at <numbers150to550by5> {degree,degrees}
+Set timer to <numbers0to100by5> {minute,minutes}
+turn off microphone
+switch off microphone
+power off microphone

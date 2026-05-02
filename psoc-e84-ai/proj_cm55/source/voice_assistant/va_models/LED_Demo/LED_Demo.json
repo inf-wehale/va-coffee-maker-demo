@@ -1,0 +1,156 @@
+{
+    "projectName": "led_demo",
+    "settings": {
+        "dict": "English-US",
+        "op_cond_db": 10,
+        "arm_core_id": "U55",
+        "nlu_timeout_ms": 0,
+        "nlu_sensitivity": 0,
+        "wwd_sensitivity": 0,
+        "ww_false_fraction": 0.0005,
+        "nlu_pos_silence_ms": 300,
+        "nlu_pre_silence_ms": 0,
+        "ww_cmd_maxwwgap_ms": 2000,
+        "wwd_pos_silence_ms": 0,
+        "wwd_pre_silence_ms": 200,
+        "cmd_reject_fraction": 0.99,
+        "cmd_timeout_adjust_level": 0,
+        "sod_ww_noactivity_timeout_ms": 500
+    },
+    "wakewords": [
+        {
+            "interjections": [
+                "OK"
+            ],
+            "word": "Infineon",
+            "phoneme": []
+        }
+    ],
+    "intents": [
+        {
+            "name": "TurnOnLight",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "turn on the light",
+                            "switch on the light",
+                            "enable the light"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "IncreaseBrightness",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "make the light brighter",
+                            "increase the brightness"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "DecreaseBrightness",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "make the light dimmer",
+                            "decrease the brightness"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "SetBrightness",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "set the brightness to",
+                            "adjust the brightness to",
+                            "dim light to"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "Brightness"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ToggleLight",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "flip the light",
+                            "toggle the light",
+                            "change the light state"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "TurnOffLight",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "turn off",
+                            "switch off",
+                            "disable"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "the light"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "variables": [
+        {
+            "name": "Brightness",
+            "type": "integer",
+            "phrases": null,
+            "ranges": [
+                "10"
+            ],
+            "units": [
+                [
+                    ""
+                ]
+            ]
+        }
+    ]
+}

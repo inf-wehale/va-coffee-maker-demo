@@ -1,0 +1,204 @@
+{
+    "projectName": "cooktop_demo",
+    "settings": {
+        "dict": "English-US",
+        "op_cond_db": 10,
+        "arm_core_id": "U55",
+        "nlu_timeout_ms": 0,
+        "nlu_sensitivity": 0,
+        "wwd_sensitivity": 52,
+        "ww_false_fraction": 0.0005,
+        "nlu_pos_silence_ms": 300,
+        "nlu_pre_silence_ms": 0,
+        "ww_cmd_maxwwgap_ms": 2000,
+        "wwd_pos_silence_ms": 0,
+        "wwd_pre_silence_ms": 200,
+        "cmd_reject_fraction": 0.99,
+        "cmd_timeout_adjust_level": 0,
+        "sod_ww_noactivity_timeout_ms": 500
+    },
+    "wakewords": [
+        {
+            "interjections": [
+                "Hey"
+            ],
+            "word": "Cook Top",
+            "phoneme": []
+        }
+    ],
+    "intents": [
+        {
+            "name": "SetPower",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "power"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "OnOff"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "SetHob",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Set hob"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "Hob"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "SetTemp",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Set temp",
+                            "Set temperature"
+                        ]
+                    }
+                },
+                {
+                    "required": false,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "to",
+                            "at"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "Temp"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "SetTimer",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "Set timer to"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "variable",
+                        "name": "Minutes"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "OffMic",
+            "nodes": [
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "turn",
+                            "switch",
+                            "power"
+                        ]
+                    }
+                },
+                {
+                    "required": true,
+                    "value": {
+                        "type": "text",
+                        "phrases": [
+                            "off microphone"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "variables": [
+        {
+            "name": "OnOff",
+            "type": "text",
+            "phrases": [
+                "on",
+                "off"
+            ],
+            "ranges": null,
+            "units": null
+        },
+        {
+            "name": "Hob",
+            "type": "integer",
+            "phrases": null,
+            "ranges": [
+                "10"
+            ],
+            "units": [
+                [
+                    ""
+                ]
+            ]
+        },
+        {
+            "name": "Temp",
+            "type": "integer",
+            "phrases": null,
+            "ranges": [
+                "150to550by5"
+            ],
+            "units": [
+                [
+                    "degree",
+                    "degrees"
+                ]
+            ]
+        },
+        {
+            "name": "Minutes",
+            "type": "integer",
+            "phrases": null,
+            "ranges": [
+                "0to100by5"
+            ],
+            "units": [
+                [
+                    "minute",
+                    "minutes"
+                ]
+            ]
+        }
+    ]
+}
